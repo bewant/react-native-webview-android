@@ -120,6 +120,12 @@ public class RNWebViewManager extends SimpleViewManager<RNWebView> {
         view.getSettings().setJavaScriptEnabled(javaScriptEnabled);
     }
 
+    @ReactProp(name = "scalesPageToFit", defaultBoolean = true)
+    public void setScalesPageToFit(RNWebView view, boolean enabled) {
+        view.getSettings().setUseWideViewPort(enabled);
+        view.getSettings().setLoadWithOverviewMode(enabled);
+    }
+
     @ReactProp(name = "userAgent")
     public void setUserAgent(RNWebView view, @Nullable String userAgent) {
         if (userAgent != null) view.getSettings().setUserAgentString(userAgent);
